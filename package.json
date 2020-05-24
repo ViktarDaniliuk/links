@@ -2,18 +2,29 @@
   "name": "links",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "commit": "npx git-cz"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ViktarDaniliuk/links.git"
   },
-  "author": "Viktar Daniliuk",
+  "author": "Viktar Daniliuk <daniliukviktar@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ViktarDaniliuk/links/issues"
   },
-  "homepage": "https://github.com/ViktarDaniliuk/links#readme"
+  "homepage": "https://github.com/ViktarDaniliuk/links#readme",
+  "dependencies": {
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.15"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
+  }
 }
