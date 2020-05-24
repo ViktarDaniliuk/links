@@ -1,0 +1,6 @@
+{
+   mongodb: {
+   "username": "Viktar",
+   "password": "$RFV5tgb"
+   }
+}
