@@ -1,10 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHttp } from '../hooks/http.hook';
 import { useMessage } from '../hooks/message.hook';
+import { AuthContext } from '../context/AuthContect';
 
 const AuthPage = () => {
+   const auth = useContext(AuthContext);
    const message = useMessage();
-   const { loading, error, request, clearError } = useHttp();
+   const { 
+      loading, 
+      error, 
+      request, 
+      clearError 
+   } = useHttp();
    const [form, setForm] = useState({
       email: '',
       password: ''
@@ -13,7 +20,11 @@ const AuthPage = () => {
    useEffect(() => {
       message(error);
       clearError();
-   }, [error, message, clearError])
+   }, [error, message, clearError]);
+   // autocomplete input fields
+   // useEffect(() => {
+   //    window.M.updateTextFields();
+   // }, []);
 
    const changeHandler = e => {
       setForm({ ...form, [e.target.name]: e.target.value })
@@ -29,7 +40,8 @@ const AuthPage = () => {
    const loginHandler = async () => {
       try {
          const data = await request('/api/auth/login', 'POST', { ...form });
-         message(data.message);
+         auth.login(data.token, data.userId);
+         // message(data.message);
       } catch (e) {}
    };
 
@@ -44,7 +56,7 @@ const AuthPage = () => {
                      <div className="input-field">
                         <input 
                            className="yellow-input"
-                           placeholder="Введите email" 
+                           // placeholder="Введите email" 
                            id="email" 
                            type="text" 
                            name="email"
@@ -57,7 +69,7 @@ const AuthPage = () => {
                      <div className="input-field">
                         <input 
                            className="yellow-input"
-                           placeholder="Введите пароль" 
+                           // placeholder="Введите пароль" 
                            id="password" 
                            type="password" 
                            name="password"
