@@ -33,3 +33,7 @@ input.yellow-input:focus {
 .nav-wrapper {
    padding: 0 2rem;
 }
+
+.create-page .input-field {
+   margin-top: 2rem;
+}
