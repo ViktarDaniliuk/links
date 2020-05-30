@@ -37,3 +37,9 @@ input.yellow-input:focus {
 .create-page .input-field {
    margin-top: 2rem;
 }
+
+.loader {
+   display: flex;
+   justify-content: center;
+   padding-top: 2rem;
+}
