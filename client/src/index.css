@@ -43,3 +43,10 @@ input.yellow-input:focus {
    justify-content: center;
    padding-top: 2rem;
 }
+
+td {
+   max-width: 300px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}

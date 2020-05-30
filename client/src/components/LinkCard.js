@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const LinkCard = ({ link }) => {
    return (
       <>
          <h2>Link</h2>
+         <hr />
          <p>
             Yours link: 
             <a 
@@ -36,6 +38,12 @@ export const LinkCard = ({ link }) => {
                {` ${new Date(link.date).toLocaleDateString()}`}
             </strong>
          </p>
+         <hr />
+         <h6>
+            <Link to={`/links`}>
+               Back
+            </Link>
+         </h6>
       </>
    )
 };
