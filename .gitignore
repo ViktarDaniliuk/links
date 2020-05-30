@@ -40,7 +40,8 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
+/build
+build
 
 # Dependency directories
 /node_modules
@@ -133,5 +134,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+.text
 
 # End of https://www.gitignore.io/api/node,windows
